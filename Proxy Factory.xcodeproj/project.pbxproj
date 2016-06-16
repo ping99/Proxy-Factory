@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A41EB4331CFA9D680014E5F2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41EB4321CFA9D680014E5F2 /* main.swift */; };
+		A41EB43A1CFA9ED50014E5F2 /* SMJobBlessHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41EB4391CFA9ED50014E5F2 /* SMJobBlessHelper.swift */; };
+		A41EB4411CFAA9950014E5F2 /* com.ping99.proxyfactory.SMJobBlessHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = A41EB4301CFA9D680014E5F2 /* com.ping99.proxyfactory.SMJobBlessHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A42212601CEF49470092DFB1 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A422125F1CEF49470092DFB1 /* Reachability.swift */; };
+		A42212631CEF4A920092DFB1 /* NSFileManager+Tar.m in Sources */ = {isa = PBXBuildFile; fileRef = A42212621CEF4A920092DFB1 /* NSFileManager+Tar.m */; };
+		A43E1D501D0438CE0022946B /* goagent in Resources */ = {isa = PBXBuildFile; fileRef = A43E1D4E1D0438CE0022946B /* goagent */; };
+		A43E1D511D0438CE0022946B /* goproxy in Resources */ = {isa = PBXBuildFile; fileRef = A43E1D4F1D0438CE0022946B /* goproxy */; };
+		A43E1D521D0439940022946B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4942CA71D0426B90010AB1B /* Assets.xcassets */; };
+		A43E1D531D0439A40022946B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4942CA91D0428770010AB1B /* MainMenu.xib */; };
+		A43E1D541D0439D60022946B /* about.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A4942C941D0425170010AB1B /* about.rtf */; };
+		A43E1D561D0439F40022946B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A43E1D551D0439F40022946B /* Info.plist */; };
+		A4942C981D0425170010AB1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4942C951D0425170010AB1B /* AppDelegate.swift */; };
+		A4942C991D0425170010AB1B /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4942C961D0425170010AB1B /* StatusMenuController.swift */; };
+		A4942D591D0429E70010AB1B /* SMJobBlessXPCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4942D571D0429E70010AB1B /* SMJobBlessXPCClient.swift */; };
+		A4942D5C1D042AEE0010AB1B /* SMJobBlessHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4942D5B1D042AEE0010AB1B /* SMJobBlessHelperProtocol.swift */; };
+		A4942D5D1D042AEE0010AB1B /* SMJobBlessHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4942D5B1D042AEE0010AB1B /* SMJobBlessHelperProtocol.swift */; };
+		A4942D651D0435440010AB1B /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4942D641D0435440010AB1B /* Downloader.swift */; };
+		A49BF6951CF042C100F38170 /* ProxyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49BF6941CF042C100F38170 /* ProxyService.swift */; };
+		A4C42B611C4B69CF00416E20 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C42B601C4B69CF00416E20 /* SwiftyJSON.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A41EB43E1CFAA8EF0014E5F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A40125211C4B369700D7B100 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A41EB42F1CFA9D680014E5F2;
+			remoteInfo = SMJobBlessHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A41EB42E1CFA9D680014E5F2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		A41EB4401CFAA9080014E5F2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LaunchServices;
+			dstSubfolderSpec = 1;
+			files = (
+				A41EB4411CFAA9950014E5F2 /* com.ping99.proxyfactory.SMJobBlessHelper in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A40125291C4B369700D7B100 /* Proxy Factory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Proxy Factory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A41EB4301CFA9D680014E5F2 /* com.ping99.proxyfactory.SMJobBlessHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = com.ping99.proxyfactory.SMJobBlessHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		A41EB4321CFA9D680014E5F2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A41EB4371CFA9ED50014E5F2 /* SMJobBlessHelper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SMJobBlessHelper-Info.plist"; sourceTree = "<group>"; };
+		A41EB4381CFA9ED50014E5F2 /* SMJobBlessHelper-Launchd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SMJobBlessHelper-Launchd.plist"; sourceTree = "<group>"; };
+		A41EB4391CFA9ED50014E5F2 /* SMJobBlessHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMJobBlessHelper.swift; sourceTree = "<group>"; };
+		A422125F1CEF49470092DFB1 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		A42212611CEF4A920092DFB1 /* NSFileManager+Tar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Tar.h"; sourceTree = "<group>"; };
+		A42212621CEF4A920092DFB1 /* NSFileManager+Tar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Tar.m"; sourceTree = "<group>"; };
+		A43E1D4E1D0438CE0022946B /* goagent */ = {isa = PBXFileReference; lastKnownFileType = folder; path = goagent; sourceTree = "<group>"; };
+		A43E1D4F1D0438CE0022946B /* goproxy */ = {isa = PBXFileReference; lastKnownFileType = folder; path = goproxy; sourceTree = "<group>"; };
+		A43E1D551D0439F40022946B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4942C941D0425170010AB1B /* about.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = about.rtf; sourceTree = "<group>"; };
+		A4942C951D0425170010AB1B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A4942C961D0425170010AB1B /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		A4942CA71D0426B90010AB1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A4942CAA1D0428770010AB1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A4942D571D0429E70010AB1B /* SMJobBlessXPCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMJobBlessXPCClient.swift; sourceTree = "<group>"; };
+		A4942D5B1D042AEE0010AB1B /* SMJobBlessHelperProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMJobBlessHelperProtocol.swift; sourceTree = "<group>"; };
+		A4942D611D042C8C0010AB1B /* Proxy Factory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Proxy Factory-Bridging-Header.h"; sourceTree = "<group>"; };
+		A4942D641D0435440010AB1B /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		A49BF6941CF042C100F38170 /* ProxyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyService.swift; sourceTree = "<group>"; };
+		A4C42B601C4B69CF00416E20 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A40125261C4B369700D7B100 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A41EB42D1CFA9D680014E5F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A40125201C4B369700D7B100 = {
+			isa = PBXGroup;
+			children = (
+				A4942C941D0425170010AB1B /* about.rtf */,
+				A43E1D551D0439F40022946B /* Info.plist */,
+				A4942C961D0425170010AB1B /* StatusMenuController.swift */,
+				A49BF6941CF042C100F38170 /* ProxyService.swift */,
+				A4942D641D0435440010AB1B /* Downloader.swift */,
+				A422125F1CEF49470092DFB1 /* Reachability.swift */,
+				A4C42B601C4B69CF00416E20 /* SwiftyJSON.swift */,
+				A4942C951D0425170010AB1B /* AppDelegate.swift */,
+				A4942CA91D0428770010AB1B /* MainMenu.xib */,
+				A43E1D4E1D0438CE0022946B /* goagent */,
+				A43E1D4F1D0438CE0022946B /* goproxy */,
+				A4942CA71D0426B90010AB1B /* Assets.xcassets */,
+				A42212611CEF4A920092DFB1 /* NSFileManager+Tar.h */,
+				A42212621CEF4A920092DFB1 /* NSFileManager+Tar.m */,
+				A4942D611D042C8C0010AB1B /* Proxy Factory-Bridging-Header.h */,
+				A4942D551D0429E70010AB1B /* SMJobBlessXPCClient */,
+				A41EB4311CFA9D680014E5F2 /* SMJobBlessHelper */,
+				A4942D5A1D042AEE0010AB1B /* SMJobBlessHelperProtocol */,
+				A401252A1C4B369700D7B100 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A401252A1C4B369700D7B100 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A40125291C4B369700D7B100 /* Proxy Factory.app */,
+				A41EB4301CFA9D680014E5F2 /* com.ping99.proxyfactory.SMJobBlessHelper */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A41EB4311CFA9D680014E5F2 /* SMJobBlessHelper */ = {
+			isa = PBXGroup;
+			children = (
+				A41EB4371CFA9ED50014E5F2 /* SMJobBlessHelper-Info.plist */,
+				A41EB4381CFA9ED50014E5F2 /* SMJobBlessHelper-Launchd.plist */,
+				A41EB4391CFA9ED50014E5F2 /* SMJobBlessHelper.swift */,
+				A41EB4321CFA9D680014E5F2 /* main.swift */,
+			);
+			path = SMJobBlessHelper;
+			sourceTree = "<group>";
+		};
+		A4942D551D0429E70010AB1B /* SMJobBlessXPCClient */ = {
+			isa = PBXGroup;
+			children = (
+				A4942D571D0429E70010AB1B /* SMJobBlessXPCClient.swift */,
+			);
+			path = SMJobBlessXPCClient;
+			sourceTree = "<group>";
+		};
+		A4942D5A1D042AEE0010AB1B /* SMJobBlessHelperProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				A4942D5B1D042AEE0010AB1B /* SMJobBlessHelperProtocol.swift */,
+			);
+			path = SMJobBlessHelperProtocol;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A40125281C4B369700D7B100 /* Proxy Factory */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A401254C1C4B369700D7B100 /* Build configuration list for PBXNativeTarget "Proxy Factory" */;
+			buildPhases = (
+				A40125251C4B369700D7B100 /* Sources */,
+				A40125261C4B369700D7B100 /* Frameworks */,
+				A40125271C4B369700D7B100 /* Resources */,
+				A41EB4401CFAA9080014E5F2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A41EB43F1CFAA8EF0014E5F2 /* PBXTargetDependency */,
+			);
+			name = "Proxy Factory";
+			productName = GoProxy;
+			productReference = A40125291C4B369700D7B100 /* Proxy Factory.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A41EB42F1CFA9D680014E5F2 /* SMJobBlessHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A41EB4361CFA9D680014E5F2 /* Build configuration list for PBXNativeTarget "SMJobBlessHelper" */;
+			buildPhases = (
+				A41EB42C1CFA9D680014E5F2 /* Sources */,
+				A41EB42D1CFA9D680014E5F2 /* Frameworks */,
+				A41EB42E1CFA9D680014E5F2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SMJobBlessHelper;
+			productName = SMJobBlessHelper;
+			productReference = A41EB4301CFA9D680014E5F2 /* com.ping99.proxyfactory.SMJobBlessHelper */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A40125211C4B369700D7B100 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Deping Zheng";
+				TargetAttributes = {
+					A40125281C4B369700D7B100 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					A41EB42F1CFA9D680014E5F2 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = A40125241C4B369700D7B100 /* Build configuration list for PBXProject "Proxy Factory" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A40125201C4B369700D7B100;
+			productRefGroup = A401252A1C4B369700D7B100 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A40125281C4B369700D7B100 /* Proxy Factory */,
+				A41EB42F1CFA9D680014E5F2 /* SMJobBlessHelper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A40125271C4B369700D7B100 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A43E1D541D0439D60022946B /* about.rtf in Resources */,
+				A43E1D531D0439A40022946B /* MainMenu.xib in Resources */,
+				A43E1D561D0439F40022946B /* Info.plist in Resources */,
+				A43E1D521D0439940022946B /* Assets.xcassets in Resources */,
+				A43E1D501D0438CE0022946B /* goagent in Resources */,
+				A43E1D511D0438CE0022946B /* goproxy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A40125251C4B369700D7B100 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4942D651D0435440010AB1B /* Downloader.swift in Sources */,
+				A4942C981D0425170010AB1B /* AppDelegate.swift in Sources */,
+				A4C42B611C4B69CF00416E20 /* SwiftyJSON.swift in Sources */,
+				A42212631CEF4A920092DFB1 /* NSFileManager+Tar.m in Sources */,
+				A4942D5C1D042AEE0010AB1B /* SMJobBlessHelperProtocol.swift in Sources */,
+				A4942C991D0425170010AB1B /* StatusMenuController.swift in Sources */,
+				A4942D591D0429E70010AB1B /* SMJobBlessXPCClient.swift in Sources */,
+				A42212601CEF49470092DFB1 /* Reachability.swift in Sources */,
+				A49BF6951CF042C100F38170 /* ProxyService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A41EB42C1CFA9D680014E5F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4942D5D1D042AEE0010AB1B /* SMJobBlessHelperProtocol.swift in Sources */,
+				A41EB4331CFA9D680014E5F2 /* main.swift in Sources */,
+				A41EB43A1CFA9ED50014E5F2 /* SMJobBlessHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A41EB43F1CFAA8EF0014E5F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A41EB42F1CFA9D680014E5F2 /* SMJobBlessHelper */;
+			targetProxy = A41EB43E1CFAA8EF0014E5F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A4942CA91D0428770010AB1B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4942CAA1D0428770010AB1B /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A401254A1C4B369700D7B100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A401254B1C4B369700D7B100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A401254D1C4B369700D7B100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer: deping@me.com (D8ZWHFGV38)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ping99.proxyfactory;
+				PRODUCT_NAME = "Proxy Factory";
+				SWIFT_OBJC_BRIDGING_HEADER = "Proxy Factory-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A401254E1C4B369700D7B100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer: deping@me.com (D8ZWHFGV38)";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ping99.proxyfactory;
+				PRODUCT_NAME = "Proxy Factory";
+				SWIFT_OBJC_BRIDGING_HEADER = "Proxy Factory-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		A41EB4341CFA9D680014E5F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "SMJobBlessHelper/SMJobBlessHelper-Info.plist";
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"SMJobBlessHelper/SMJobBlessHelper-Info.plist",
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					"SMJobBlessHelper/SMJobBlessHelper-Launchd.plist",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ping99.proxyfactory.SMJobBlessHelper;
+				PRODUCT_NAME = com.ping99.proxyfactory.SMJobBlessHelper;
+			};
+			name = Debug;
+		};
+		A41EB4351CFA9D680014E5F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "SMJobBlessHelper/SMJobBlessHelper-Info.plist";
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"SMJobBlessHelper/SMJobBlessHelper-Info.plist",
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					"SMJobBlessHelper/SMJobBlessHelper-Launchd.plist",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ping99.proxyfactory.SMJobBlessHelper;
+				PRODUCT_NAME = com.ping99.proxyfactory.SMJobBlessHelper;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A40125241C4B369700D7B100 /* Build configuration list for PBXProject "Proxy Factory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A401254A1C4B369700D7B100 /* Debug */,
+				A401254B1C4B369700D7B100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A401254C1C4B369700D7B100 /* Build configuration list for PBXNativeTarget "Proxy Factory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A401254D1C4B369700D7B100 /* Debug */,
+				A401254E1C4B369700D7B100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A41EB4361CFA9D680014E5F2 /* Build configuration list for PBXNativeTarget "SMJobBlessHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A41EB4341CFA9D680014E5F2 /* Debug */,
+				A41EB4351CFA9D680014E5F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A40125211C4B369700D7B100 /* Project object */;
+}

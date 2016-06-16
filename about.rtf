@@ -1,0 +1,73 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf460
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset0 HelveticaNeue-Light;\f2\fnil\fcharset0 HelveticaNeue-Thin;
+}
+{\colortbl;\red255\green255\blue255;\red210\green151\blue105;\red30\green26\blue22;\red205\green160\blue95;
+\red109\green109\blue109;\red38\green38\blue38;\red246\green246\blue239;\red224\green213\blue97;}
+\margl1440\margr1440\vieww19920\viewh12040\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+Proxy Factory
+\fs28 \
+macOS GUI for goproxy and goagent\
+
+\b0 \cf4 Copyright\'a92016\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1 \cf4 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26 \cf1 Credits to phuslu for goagent and goproxy. Please visit his project on {\field{\*\fldinst{HYPERLINK "https://github.com/phuslu/goproxy"}}{\fldrslt https://github.com/phuslu/goproxy}} for more details. This macOS GUI does not make any changes to goagent or goproxy, but provide an interface and utilities for macOS users.\
+Goproxy is recommended for daily use because goagent is no longer in development. As such, the default proxy service is goproxy.
+\fs24 \cf5 \
+\
+* Although goagent can run well on macOS with newer python version, it is still recommended to install Python 2.7.8 to prevent unexceptable errors. Following instructions show how to do it. Just copy and paste commands in white to terminal and hit enter.\cf6  \cf5 The installation is described in original post {\field{\*\fldinst{HYPERLINK "http://dtucker.co.uk/hack/installing-pyenv-on-mac-osx.html"}}{\fldrslt \cf6 Installing Pyenv on Mac OSX}}\cf6 \
+\cf5 \
+1. Install {\field{\*\fldinst{HYPERLINK "http://brew.sh/"}}{\fldrslt Homebrew}} \
+\pard\pardeftab720\partightenfactor0
+\cf1 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"\cf7 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \
+2. Run \'93brew doctor\'94 to check that everything is ok with your installation. Hopefully you will get a message \'93Your system is ready to brew\'94, otherwise doctor brew will oftentimes tell you what to do.\
+\pard\pardeftab720\partightenfactor0
+\cf7 brew doctor\
+\pard\pardeftab720\partightenfactor0
+\cf5 \
+This step is not needed. The following command will install {\field{\*\fldinst{HYPERLINK "http://brew.sh/"}}{\fldrslt Homebrew}} \'92s Python 2.7 to replace the system Python. Replacing the system Python fixes issues with needing \'93sudo\'94 for easy_install and others documented {\field{\*\fldinst{HYPERLINK "https://github.com/mxcl/homebrew/wiki/Homebrew-and-Python"}}{\fldrslt here}}. \
+brew install python\cf7 \
+\cf5  \
+3. Install Pyenv.\
+\pard\pardeftab720\partightenfactor0
+\cf7 brew install pyenv\
+\pard\pardeftab720\partightenfactor0
+\cf5 \
+4. Now Pyenv is installed, you should edit your \'93\\~/.bash_profile\'94 to change the Pyenv root path and makes sure Pyenv is initialized.\
+\pard\pardeftab720\partightenfactor0
+\cf7 sudo nano \\~/.bash_profile\
+\pard\pardeftab720\partightenfactor0
+\cf5 and add the following:\
+\pard\pardeftab720\partightenfactor0
+\cf7 export PYENV_ROOT=/usr/local/opt/pyenv  \
+eval \cf8 "$(pyenv init -)"\cf7 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \
+5. This command will make your profile changes take effect.\
+\pard\pardeftab720\partightenfactor0
+\cf7 $SHELL -l\
+\pard\pardeftab720\partightenfactor0
+\cf5 \
+6. Now to actually use pyenv to install a new Python version\
+\pard\pardeftab720\partightenfactor0
+\cf7 pyenv install 2.7.8\
+pyenv rehash\
+\pard\pardeftab720\partightenfactor0
+\cf5 \
+This step is not needed. To set the default Python version for a folder.\
+cd /Applications/goagent/local\cf7 \
+\cf5 pyenv local 2.7.8\cf7 \
+\cf5 \
+7. Install pyopenssl\
+\pard\pardeftab720\partightenfactor0
+\cf7 sudo pip install pyopenssl\cf5  
+\f2 \
+}

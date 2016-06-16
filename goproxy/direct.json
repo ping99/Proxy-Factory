@@ -1,0 +1,21 @@
+{
+	"Transport": {
+		"Dialer": {
+			"Timeout": 10,
+			"KeepAlive": 180,
+			"DualStack": false,
+			"RetryTimes": 2,
+			"RetryDelay": 0.05,
+			"DNSCacheExpiry": 3600,
+			"DNSCacheSize": 81920
+		},
+		"TLSClientConfig": {
+			"InsecureSkipVerify": false,
+			"ClientSessionCacheSize": 1000
+		},
+		"DisableKeepAlives": false,
+		"DisableCompression": false,
+		"TLSHandshakeTimeout": 8,
+		"MaxIdleConnsPerHost": 16
+	}
+}

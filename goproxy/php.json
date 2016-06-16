@@ -1,0 +1,28 @@
+{
+	"Servers": [
+		{
+			"Url": "http://yourapp.com/",
+			"Password": "123456",
+			"SSLVerify": false,
+			"Host": "",
+		}
+	],
+	"Sites": [
+		"*"
+	],
+	"Transport": {
+		"Dialer": {
+			"Timeout": 10,
+			"KeepAlive": 180,
+			"DualStack": false,
+			"RetryTimes": 2,
+			"RetryDelay": 0.05,
+			"DNSCacheExpiry": 3600,
+			"DNSCacheSize": 81920
+		},
+		"DisableKeepAlives": false,
+		"DisableCompression": false,
+		"TLSHandshakeTimeout": 4,
+		"MaxIdleConnsPerHost": 16
+	}
+}

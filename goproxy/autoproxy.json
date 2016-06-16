@@ -1,0 +1,24 @@
+{
+	"SiteFilters": {
+		"Enabled": false,
+		"Rules": {
+			"live.github.com": "direct",
+			"rarbg.to": "direct",
+			"www.slideshare.net": "php",
+		},
+	},
+	"IndexFiles": {
+		"Enabled": true,
+		"Files": [
+			"proxy.pac",
+			"GoProxy.crt",
+		]
+	},
+	"GFWList": {
+		"Enabled": true,
+		"URL": "https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt",
+		"File": "gfwlist.txt",
+		"Encoding": "base64",
+		"Duration": 86400
+	}
+}
