@@ -53,7 +53,7 @@ class StatusMenuController: NSObject {
 
     override func awakeFromNib() {
         let icon = NSImage(named: "statusIcon")
-        icon?.template = false// best for dark mode
+        icon?.template = false
         statusItem.image = icon
         statusItem.menu = statusMenu
         // load about info from about.rtf
@@ -78,6 +78,7 @@ class StatusMenuController: NSObject {
     }
     
     @IBAction func enableProxy(sender: NSMenuItem) {
+        // a loop to switch between goproxy and goagent
         if sender.state == NSOnState {
             sender.state = NSOffState
             if sender.title == "GoAgent" {
