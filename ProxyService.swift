@@ -60,12 +60,6 @@ class ProxyService{
         self.launchPath = self.currentDirectoryPath + "/goproxy"
         self.arguments = []
         
-        if let certificatePath = NSBundle.mainBundle().pathForResource("GoProxy", ofType: ".crt", inDirectory: "goproxy"){
-            print("certificatePath")
-            self.certificatePath = certificatePath
-            
-        }
-        
         let httpproxyJsonPath = NSBundle.mainBundle().pathForResource("httpproxy", ofType: ".json", inDirectory: "goproxy")!
         var strData = ""
         do {
@@ -106,7 +100,6 @@ class ProxyService{
             self.launchPath = "/usr/bin/python"
         }
         self.arguments = [self.currentDirectoryPath + "/proxy.py"]
-        self.certificatePath = NSBundle.mainBundle().pathForResource("CA", ofType: ".crt", inDirectory: "goagent/local")!
         
         let goagentFilePath = NSBundle.mainBundle().pathForResource("proxy.user", ofType: ".ini", inDirectory: "goagent/local")!
         var goagentString = ""
@@ -265,6 +258,17 @@ class ProxyService{
     }
     
     func installCertificate() {
+        // goproxy is default
+        if self.proxyName == "goproxy"{
+            if let certificatePath = NSBundle.mainBundle().pathForResource("goproxy", ofType: "") {
+                self.certificatePath = certificatePath + "/GoProxy.crt"
+            }
+        }
+        // if switched to goagent
+        if self.proxyName == "goagent"{
+            self.certificatePath = NSBundle.mainBundle().pathForResource("CA", ofType: ".crt", inDirectory: "goagent/local")!
+        }
+        
         let client = SMJobBlessXPCClient()
         client.installRootCertificate(self.certificatePath)
     }

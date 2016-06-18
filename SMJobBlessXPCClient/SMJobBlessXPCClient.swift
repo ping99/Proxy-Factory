@@ -125,7 +125,7 @@ class SMJobBlessXPCClient{
                     // Display notifications
                     let notification:NSUserNotification = NSUserNotification()
                     notification.title = "Proxy Factory"
-                    notification.subtitle = "Import \(certificatePath.componentsSeparatedByString("/").last!) to system"
+                    notification.subtitle = "Import RootCA \(certificatePath.componentsSeparatedByString("/").last!)"
                     notification.informativeText = response
                     notification.soundName = NSUserNotificationDefaultSoundName
                     notification.deliveryDate = NSDate(timeIntervalSinceNow: 1)
