@@ -2,11 +2,17 @@
 This project is written in Apple Swift Language, provide an interface to switch proxy service goagent and goproxy, and some useful functions for macOS user. 
 
 macOS user can:
+
 1.Switch between goagent and goproxy
+
 2.Toggle system proxy settings without require password(only once) by use SMJobless + XPC
+
 3.Fix port confict automatically
+
 4.Import RootCA to system
+
 5.Update goproxy from github
+
 6.User friendly interface to change general settings such as AppIDs, Password, Proxy Port, IP List, etc. 
 
 *Both goproxy and goagent are developed by phuslu, https://github.com/phuslu/goproxy.
