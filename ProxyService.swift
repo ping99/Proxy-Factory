@@ -276,7 +276,7 @@ class ProxyService{
     func updateSettingToFile(){
         // Inner function for updating proxy.pac
         func updatePACFile(inDirectory directory:String){
-            let pacFilePath = NSBundle.mainBundle().pathForResource("proxy", ofType: ".pac", inDirectory: directory)!
+            let pacFilePath = NSBundle.mainBundle().pathForResource("goproxy", ofType: "")! + "/proxy.pac"
             var pacString = ""
             do
             {

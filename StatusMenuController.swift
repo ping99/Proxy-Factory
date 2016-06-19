@@ -203,9 +203,10 @@ class StatusMenuController: NSObject {
         let appIDString = appIDTextField.stringValue.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "|\n\t "))
         let appIDList = appIDString.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: "|\n\t "))
         self.proxyService!.appIDs = appIDList
+        self.proxyService!.password = appPasswordTextField.stringValue
         self.proxyService!.updateSettingToFile()
         self.proxyService!.restartService()
-        
+
         // Inform user
         let alert = NSAlert()
         alert.messageText = "Information"
@@ -285,7 +286,7 @@ class StatusMenuController: NSObject {
             let strData = NSString(data: returnData!, encoding: NSUTF8StringEncoding)
             let lastestdict = strData!.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: ","))
             for item in lastestdict{
-                if item.containsString("browser_download_url") && item.containsString("macosx_amd64"){
+                if item.containsString("browser_download_url") && item.containsString("macos_amd64"){
                     let downloadLinkString = item.stringByReplacingOccurrencesOfString("\"browser_download_url\":\"", withString: "").stringByReplacingOccurrencesOfString("\"}", withString: "")
                     downloadURL = NSURL(string: downloadLinkString)!
                 }
