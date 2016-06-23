@@ -111,7 +111,25 @@ class SMJobBlessXPCClient{
     
     
     func toggleSystemProxy(useProxy:Bool, usePAC:Bool, proxyPort:String, pacPath:String){
-        self.xpcServiceConnection!.remoteObjectProxy.toggleSystemProxy(useProxy, usePAC: usePAC, proxyPort: proxyPort, pacPath: pacPath)
+        self.xpcServiceConnection!.remoteObjectProxy.toggleSystemProxy(useProxy, usePAC: usePAC, proxyPort: proxyPort, pacPath: pacPath, withReply:{response in
+            NSOperationQueue.mainQueue().addOperationWithBlock(){
+                if (!response.isEmpty){
+                    NSLog(response)
+                    // Display notifications                    
+                    let notification:NSUserNotification = NSUserNotification()
+                    notification.title = "Proxy Factory"
+                    notification.subtitle = "Toggle system proxy"
+                    notification.informativeText = response
+                    notification.soundName = NSUserNotificationDefaultSoundName
+                    notification.deliveryDate = NSDate(timeIntervalSinceNow: 1)
+                    let notificationCenter:NSUserNotificationCenter = NSUserNotificationCenter.defaultUserNotificationCenter()
+                    notificationCenter.scheduleNotification(notification)
+                }else{
+                    NSLog("No reply received from helper tool.")
+                }
+            }
+            self.xpcServiceConnection!.invalidate()
+        })
     }
     
     func killProcess(onListenPort port:Int){

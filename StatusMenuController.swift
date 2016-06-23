@@ -112,7 +112,6 @@ class StatusMenuController: NSObject {
         }
         
         let setProxyOnOff:Bool = (!(sender.state == NSOnState)) ? true : false
-        print("set proxy \(setProxyOnOff)")
         let xpcClient =  SMJobBlessXPCClient()
         xpcClient.toggleSystemProxy(setProxyOnOff, usePAC: usePAC, proxyPort:(self.proxyService?.proxyPort)!, pacPath: (self.proxyService?.pacPath)!)
         

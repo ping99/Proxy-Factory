@@ -216,6 +216,7 @@
 				TargetAttributes = {
 					A40125281C4B369700D7B100 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = G3R2TLHZ78;
 					};
 					A41EB42F1CFA9D680014E5F2 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -392,11 +393,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer: deping@me.com (D8ZWHFGV38)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ping99.proxyfactory;
 				PRODUCT_NAME = "Proxy Factory";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Proxy Factory-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -408,12 +411,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer: deping@me.com (D8ZWHFGV38)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ping99.proxyfactory;
 				PRODUCT_NAME = "Proxy Factory";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Proxy Factory-Bridging-Header.h";
 			};
 			name = Release;
@@ -422,6 +427,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer: deping@me.com (D8ZWHFGV38)";
 				INFOPLIST_FILE = "SMJobBlessHelper/SMJobBlessHelper-Info.plist";
 				OTHER_LDFLAGS = (
 					"-sectcreate",
@@ -442,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer: deping@me.com (D8ZWHFGV38)";
 				INFOPLIST_FILE = "SMJobBlessHelper/SMJobBlessHelper-Info.plist";
 				OTHER_LDFLAGS = (
 					"-sectcreate",

@@ -88,7 +88,7 @@ class SMJobBlessHelper: NSObject, SMJobBlessHelperProtocol, NSXPCListenerDelegat
     }
     
     
-    func toggleSystemProxy(useProxy:Bool, usePAC:Bool, proxyPort:String, pacPath:String) {
+    func toggleSystemProxy(useProxy:Bool, usePAC:Bool, proxyPort:String, pacPath:String, withReply reply:(response:String)->Void) {
         var authRef:AuthorizationRef = nil
         let authFlags: AuthorizationFlags = [
             .Defaults,
@@ -100,23 +100,31 @@ class SMJobBlessHelper: NSObject, SMJobBlessHelperProtocol, NSXPCListenerDelegat
         
         if (authRef == nil) {
             print("No authorization has been granted to modify network configuration")
+            reply(response: "No authorization has been granted to modify network configuration")
             return
         }
-        
-        print("Toggle system proxy \(useProxy ? "YES" : "NO") ")
-        
-        let prefRef: SCPreferencesRef  = SCPreferencesCreateWithAuthorization(nil, "iProxies" as CFString, nil, authRef)!
+       
+        let prefRef: SCPreferencesRef  = SCPreferencesCreateWithAuthorization(nil, "Proxy-Factory" as CFString, nil, authRef)!
         
         let sets:NSDictionary = SCPreferencesGetValue(prefRef, kSCPrefNetworkServices) as! NSDictionary
         // Set proxies for AirPort and Ethernet
         if (previousDeviceProxies.count == 0) {
             for key in sets.allKeys {
                 let dict = sets.objectForKey(key)
-                if let hardware = dict!.valueForKeyPath("Interface")!.valueForKey("Hardware"){
-                    if (hardware.isEqualToString("AirPort") || hardware.isEqualToString("Ethernet")) {
-                        let proxies = dict!.objectForKey(kSCEntNetProxies)
-                        if (proxies != nil) {
-                            previousDeviceProxies.setObject(proxies!.mutableCopy(), forKey:key as! NSString)
+                for item in (dict?.allKeys)!{
+                    if item as! String == "Interface"{
+                        let interface = dict!.valueForKeyPath("Interface")! as! NSDictionary
+                        for interfaceKey in interface.allKeys{
+                            if interfaceKey as! String == "Hardware"{
+                                if let hardware = interface.valueForKey("Hardware"){
+                                    if (hardware.isEqualToString("AirPort") || hardware.isEqualToString("Ethernet")) {
+                                        let proxies = dict!.objectForKey(kSCEntNetProxies)
+                                        if (proxies != nil) {
+                                            previousDeviceProxies.setObject(proxies!.mutableCopy(), forKey:key as! NSString)
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }

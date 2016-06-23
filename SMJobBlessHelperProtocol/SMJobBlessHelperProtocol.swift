@@ -9,7 +9,7 @@
 import Foundation
 @objc(SMJobBlessHelperProtocol)
 protocol SMJobBlessHelperProtocol{
-    func toggleSystemProxy(useProxy:Bool, usePAC:Bool, proxyPort:String, pacPath:String)
+    func toggleSystemProxy(useProxy:Bool, usePAC:Bool, proxyPort:String, pacPath:String, withReply reply:(response:String)->Void)
     func killProcess(onListenPort port:Int)
     func installRootCertificate(certificatePath:String, withReply reply:(response:String)->Void) -> Void
 
