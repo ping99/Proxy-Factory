@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Security
 import SystemConfiguration
 
 
@@ -68,7 +69,7 @@ class StatusMenuController: NSObject {
         self.proxyService =  ProxyService(proxyName: "goproxy", logScrollView: self.logScrollView)
         self.proxyService?.startService()
         initProxySetting()
-        icon?.template = true
+        icon?.template = true   
     }
     
     @IBAction func logClicked(sender: AnyObject) {
@@ -261,7 +262,6 @@ class StatusMenuController: NSObject {
             return
         }
 
-        self.proxyService!.stopService()
         NSApplication.sharedApplication().activateIgnoringOtherApps(true)
         updateWindow.orderFrontRegardless()
         updateWindow.center()

@@ -174,6 +174,27 @@ class SMJobBlessHelper: NSObject, SMJobBlessHelperProtocol, NSXPCListenerDelegat
     }
     
     func installRootCertificate(certificatePath:String, withReply reply:(response:String)->Void) -> Void{
+        // Search and delete certificate in keychain if there is a certificate with same name
+        // Default is GoProxy
+        var certificateName = "GoProxy"
+        if certificatePath.containsString("goagent"){
+            certificateName = "GoAgent"
+        }
+        let query = [
+            kSecClass as String: kSecClassCertificate as String,
+            kSecAttrLabel as String: certificateName,
+            kSecMatchLimit as String: kSecMatchLimitOne as String,
+            kSecReturnRef as String: true
+        ]
+        var result: SecKeychainItemRef?
+        let status = withUnsafeMutablePointer (&result) { SecItemCopyMatching (query, UnsafeMutablePointer ($0)) }
+        if status == errSecSuccess{
+            SecKeychainItemDelete(result!)
+        } else {
+            NSLog("No certificate with same label in keychain")
+        }
+        
+        // Import new certificate
         var script:String = ""
         script += "do shell script \"sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain " + "'" + certificatePath + "'\"" + " with administrator privileges"
         var error: NSDictionary?
