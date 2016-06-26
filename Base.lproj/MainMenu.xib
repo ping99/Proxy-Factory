@@ -99,6 +99,7 @@
                 <outlet property="preferencesTabView" destination="W4a-Mb-kFf" id="arK-Cu-adg"/>
                 <outlet property="preferencesWindow" destination="dwX-Xr-bQD" id="Dd0-ek-yVk"/>
                 <outlet property="proxyPortTextField" destination="heN-5G-eY1" id="ARQ-W6-t1o"/>
+                <outlet property="startAtLoginMenuItem" destination="wtB-9M-gMK" id="B6d-kG-hSz"/>
                 <outlet property="statusMenu" destination="1eo-Rv-TQZ" id="454-4x-4Th"/>
                 <outlet property="updateProgressLabel" destination="p9O-0f-fqf" id="v5I-pw-4KB"/>
                 <outlet property="updateWindow" destination="Tnh-xV-p2E" id="1pa-75-ebe"/>
@@ -171,6 +172,13 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="oxc-sp-WAl"/>
+                <menuItem title="Start at Login" id="wtB-9M-gMK">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="setLoginItem:" target="wNI-To-yxB" id="qlL-uk-Tl4"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="MDK-u8-aox"/>
                 <menuItem title="Quit" id="9V0-Au-4gy" userLabel="Quit">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

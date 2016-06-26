@@ -112,7 +112,7 @@ class SMJobBlessHelper: NSObject, SMJobBlessHelperProtocol, NSXPCListenerDelegat
             for key in sets.allKeys {
                 let dict = sets.objectForKey(key)
                 for item in (dict?.allKeys)!{
-                    if item as! String == "Interface"{
+                    if item == "Interface"{
                         let interface = dict!.valueForKeyPath("Interface")! as! NSDictionary
                         for interfaceKey in interface.allKeys{
                             if interfaceKey as! String == "Hardware"{
@@ -186,6 +186,17 @@ class SMJobBlessHelper: NSObject, SMJobBlessHelperProtocol, NSXPCListenerDelegat
             kSecMatchLimit as String: kSecMatchLimitOne as String,
             kSecReturnRef as String: true
         ]
+        
+        var result: AnyObject?
+        let status: OSStatus = SecItemCopyMatching(query, &result)
+        if status == noErr {
+            SecKeychainItemDelete(result! as! SecKeychainItem)
+        }
+        else {
+            NSLog("No certificate with same label in keychain")
+        }
+
+        /* old way
         var result: SecKeychainItemRef?
         let status = withUnsafeMutablePointer (&result) { SecItemCopyMatching (query, UnsafeMutablePointer ($0)) }
         if status == errSecSuccess{
@@ -193,6 +204,7 @@ class SMJobBlessHelper: NSObject, SMJobBlessHelperProtocol, NSXPCListenerDelegat
         } else {
             NSLog("No certificate with same label in keychain")
         }
+        */
         
         // Import new certificate
         var script:String = ""

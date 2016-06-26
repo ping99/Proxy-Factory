@@ -121,7 +121,7 @@ class SMJobBlessXPCClient{
                     notification.subtitle = "Toggle system proxy"
                     notification.informativeText = response
                     notification.soundName = NSUserNotificationDefaultSoundName
-                    notification.deliveryDate = NSDate(timeIntervalSinceNow: 1)
+                    notification.deliveryDate = NSDate(timeIntervalSinceNow: 0)
                     let notificationCenter:NSUserNotificationCenter = NSUserNotificationCenter.defaultUserNotificationCenter()
                     notificationCenter.scheduleNotification(notification)
                 }else{
@@ -146,7 +146,7 @@ class SMJobBlessXPCClient{
                     notification.subtitle = "Import RootCA \(certificatePath.componentsSeparatedByString("/").last!)"
                     notification.informativeText = response
                     notification.soundName = NSUserNotificationDefaultSoundName
-                    notification.deliveryDate = NSDate(timeIntervalSinceNow: 1)
+                    notification.deliveryDate = NSDate(timeIntervalSinceNow: 0)
                     let notificationCenter:NSUserNotificationCenter = NSUserNotificationCenter.defaultUserNotificationCenter()
                     notificationCenter.scheduleNotification(notification)
                 }else{

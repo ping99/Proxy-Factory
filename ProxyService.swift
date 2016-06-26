@@ -29,7 +29,19 @@ class ProxyService{
     var pacPath: String{
         return "http://127.0.0.1:\(self.pacPort.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: " ")))/proxy.pac"
     }
-    var certificatePath: String = ""
+    
+    var certificatePath: String {
+        var certificatePath: String = ""
+        if self.proxyName == "goproxy"{
+            if let path = NSBundle.mainBundle().pathForResource("goproxy", ofType: "") {
+                certificatePath = path + "/GoProxy.crt"
+            }
+        }else{
+            certificatePath = NSBundle.mainBundle().pathForResource("CA", ofType: ".crt", inDirectory: "goagent/local")!
+        }
+        return certificatePath
+    }
+    
     var appIDs:[AnyObject] = []
     var password: String = ""
     var ipList:[AnyObject] = []
@@ -258,17 +270,6 @@ class ProxyService{
     }
     
     func installCertificate() {
-        // goproxy is default
-        if self.proxyName == "goproxy"{
-            if let certificatePath = NSBundle.mainBundle().pathForResource("goproxy", ofType: "") {
-                self.certificatePath = certificatePath + "/GoProxy.crt"
-            }
-        }
-        // if switched to goagent
-        if self.proxyName == "goagent"{
-            self.certificatePath = NSBundle.mainBundle().pathForResource("CA", ofType: ".crt", inDirectory: "goagent/local")!
-        }
-        
         let client = SMJobBlessXPCClient()
         client.installRootCertificate(self.certificatePath)
     }

@@ -9,7 +9,7 @@
 import Cocoa
 import Security
 import SystemConfiguration
-
+import ServiceManagement
 
 class StatusMenuController: NSObject {
     
@@ -42,6 +42,7 @@ class StatusMenuController: NSObject {
     @IBOutlet weak var enableAutoProxyMenuItem: NSMenuItem!
     @IBOutlet weak var enableGlobalProxyMenuItem: NSMenuItem!
     
+    @IBOutlet weak var startAtLoginMenuItem: NSMenuItem!
     // update window
     @IBOutlet weak var updateWindow: NSWindow!
     @IBOutlet weak var downloadProgressIndicator: NSProgressIndicator!
@@ -57,6 +58,8 @@ class StatusMenuController: NSObject {
         icon?.template = false
         statusItem.image = icon
         statusItem.menu = statusMenu
+        startAtLoginMenuItem.state = (isStartAtLogin() ? NSOnState: NSOffState)
+        
         // load about info from about.rtf
         aboutTextView.editable = false
         let aboutFilePath = NSBundle.mainBundle().pathForResource("about", ofType: ".rtf")
@@ -103,18 +106,8 @@ class StatusMenuController: NSObject {
     }
     
     @IBAction func setProxyClicked(sender: NSMenuItem) {
-        var usePAC:Bool = true
-        if sender == enableAutoProxyMenuItem {
-            usePAC = true
-        }else if sender == enableGlobalProxyMenuItem{
-            usePAC = false
-        }else{
-            print("something triggled method setProxyClicked(sender: NSMenuItem)")
-        }
-        
-        let setProxyOnOff:Bool = (!(sender.state == NSOnState)) ? true : false
         let xpcClient =  SMJobBlessXPCClient()
-        xpcClient.toggleSystemProxy(setProxyOnOff, usePAC: usePAC, proxyPort:(self.proxyService?.proxyPort)!, pacPath: (self.proxyService?.pacPath)!)
+        xpcClient.toggleSystemProxy((!(sender.state == NSOnState)) ? true : false, usePAC: !(enableAutoProxyMenuItem.state == NSOnState) ? true : false, proxyPort:(self.proxyService?.proxyPort)!, pacPath: (self.proxyService?.pacPath)!)
         
         // Update menu status. Turn one and Turn off another
         if sender.state == NSOffState {
@@ -244,14 +237,47 @@ class StatusMenuController: NSObject {
         preferencesTabView.selectTabViewItemWithIdentifier("About")
     }
     
+    @IBAction func setLoginItem(sender: NSMenuItem) {
+        sender.state = (sender.state == NSOnState ? NSOffState:NSOnState)
+        let startAtLogin = (sender.state==NSOnState ? true: false)
+        if (!SMLoginItemSetEnabled("com.ping99.proxyfactory.LoginItemHelper", startAtLogin)) {
+            NSLog("Login Item was not successful updated")
+            return
+        }
+        // Display notifications
+        let notification:NSUserNotification = NSUserNotification()
+        notification.title = "Proxy Factory"
+        notification.subtitle = "Set Login Item"
+        if startAtLogin {
+            notification.informativeText = "Proxy Factory will start at login"
+        }else{
+            notification.informativeText = "Proxy Factory will NOT start at login"
+        }
+        notification.soundName = NSUserNotificationDefaultSoundName
+        notification.deliveryDate = NSDate(timeIntervalSinceNow: 0)
+        let notificationCenter:NSUserNotificationCenter = NSUserNotificationCenter.defaultUserNotificationCenter()
+        notificationCenter.scheduleNotification(notification)
+    }
+    
+    func isStartAtLogin() -> Bool{
+        let jobDicts = SMCopyAllJobDictionaries( kSMDomainUserLaunchd ).takeRetainedValue() as NSArray as! [[String:AnyObject]]
+        let label =  "com.ping99.proxyfactory.LoginItemHelper"
+        let jobEnabled = jobDicts.filter { $0["Label"] as! String == label }.isEmpty == false
+        return jobEnabled
+    }
+    
     @IBAction func quitClicked(sender: NSMenuItem) {
         self.proxyService!.stopService()
         let xpcClient =  SMJobBlessXPCClient()
-        xpcClient.toggleSystemProxy(false, usePAC: true, proxyPort:(self.proxyService?.proxyPort)!, pacPath: (self.proxyService?.pacPath)!)
+        xpcClient.toggleSystemProxy(false, usePAC: (enableAutoProxyMenuItem.state == NSOnState) ? true : false, proxyPort:(self.proxyService?.proxyPort)!, pacPath: (self.proxyService?.pacPath)!)
         NSApplication.sharedApplication().terminate(self)
     }
     
     @IBAction func checkUpdate(sender: AnyObject) {
+        // Disable system proxy
+        let xpcClient =  SMJobBlessXPCClient()
+        xpcClient.toggleSystemProxy(false, usePAC: (enableAutoProxyMenuItem.state == NSOnState) ? true : false, proxyPort:(self.proxyService?.proxyPort)!, pacPath: (self.proxyService?.pacPath)!)
+        
         if self.proxyService?.proxyName == "goagent"{
             // no update for goagent
             let alert = NSAlert()
@@ -261,7 +287,7 @@ class StatusMenuController: NSObject {
             alert.beginSheetModalForWindow(self.preferencesWindow, completionHandler: nil)
             return
         }
-
+        
         NSApplication.sharedApplication().activateIgnoringOtherApps(true)
         updateWindow.orderFrontRegardless()
         updateWindow.center()
@@ -336,6 +362,9 @@ class StatusMenuController: NSObject {
                             }
                             self.updateProgressLabel.stringValue = "Goproxy updated successfully."
                             self.proxyService!.restartService()
+                            // Enable system proxy
+                            let xpcClient =  SMJobBlessXPCClient()
+                            xpcClient.toggleSystemProxy((self.enableAutoProxyMenuItem.state == NSOnState)||(self.enableGlobalProxyMenuItem.state == NSOnState), usePAC: (self.enableAutoProxyMenuItem.state == NSOnState) ? true : false, proxyPort:(self.proxyService?.proxyPort)!, pacPath: (self.proxyService?.pacPath)!)
                             print("Goproxy updated successfully.\n")
                             
                         }
